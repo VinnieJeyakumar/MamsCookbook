@@ -5,36 +5,106 @@
 	<meta name="description=" content="HomePage">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" href="css/styleForLogin.css"> -->
+	<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="css/img/favicon.ico" type="image/gif" sizes="16x16">
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+	<!-- Third party plugin CSS-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleMain.css">
 </head>
-<body>
+<body id = "page-top">
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+		<div class="container">
+			<img style = "width: 40px; padding-right: 10px" src = "css/img/favicon.ico">
+			<a class="navbar-brand js-scroll-trigger" href="index.html"> MAMS Cookbook </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto my-2 my-lg-0">
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Masthead-->
+	<header class="masthead2">
+		<div class="container h-100">
+			<div class="row h-100 align-items-center justify-content-center text-center">
+				<div class="col-lg-10 align-self-end">
+					<h1 class="text-uppercase text-white font-weight-bold"> View Cookbook </h1>
+					<hr class="divider my-4" />
+				</div>
+				<div class="col-lg-8 align-self-baseline">
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Services section-->
+	<section id="recipes" class="recipes">
+		<div class="container">
+			<div class="row">
+				<!--Firebase fills here-->
+				<!--Firebase fills here-->
+				<!--Firebase fills here-->
+				<div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn">
+					<div class="box">
+						<h4>Lorem Ipsum</h4>
+						<p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+					</div>
+					<!--This is the Modal part-->
+					<div id="myModal" class="modal">
+						<div class="modal-content">
+							<p>Some text in the Modal..</p>
+						</div>
+					</div>
+					<!--This is the Modal part-->
+				</div>
+				<!--Firebase fills here-->
+				<!--Firebase fills here-->
+				<!--Firebase fills here-->
+			</div>
+		</div>
+	</section>
+	<!-- Footer-->
+	<footer class="bg-light py-5">
+		<div class="container"><div class="small text-center text-muted">Copyright © 2020 - MAMS Cookbook</div></div>
+	</footer>
+	<!-- Bootstrap core JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/dom.js"></script>
+</script>
+<!-- Firebase Stuff -->
+<!-- Firebase Stuff -->
+<!-- Firebase Stuff -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
-	<!-- Firebase Stuff -->
-	<!-- Firebase Stuff -->
-	<!-- Firebase Stuff -->
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-	https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+	apiKey: "AIzaSyBLI8ilWAVENpSxuUAQ-vWCdnNYttgk87o",
+	authDomain: "mams-cookbook.firebaseapp.com",
+	databaseURL: "https://mams-cookbook.firebaseio.com",
+	projectId: "mams-cookbook",
+	storageBucket: "mams-cookbook.appspot.com",
+	messagingSenderId: "427263089653",
 
-	<script>
-	// Your web app's Firebase configuration
-	var firebaseConfig = {
-		apiKey: "AIzaSyBLI8ilWAVENpSxuUAQ-vWCdnNYttgk87o",
-		authDomain: "mams-cookbook.firebaseapp.com",
-		databaseURL: "https://mams-cookbook.firebaseio.com",
-		projectId: "mams-cookbook",
-		storageBucket: "mams-cookbook.appspot.com",
-		messagingSenderId: "427263089653",
-
-		appId: "1:427263089653:web:15b22022503a118a84debc",
-		measurementId: "G-W89TWLFZE2"
-	};
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	firebase.analytics();
-	</script>
+	appId: "1:427263089653:web:15b22022503a118a84debc",
+	measurementId: "G-W89TWLFZE2"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
 </body>
 </html>
