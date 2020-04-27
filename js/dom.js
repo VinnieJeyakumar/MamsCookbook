@@ -15,8 +15,43 @@ const setupRecipes = (data) => {
     let html = '';
     data.forEach(doc => {
         const recipe = doc.data();
+        // Ingredient Code
+        var ingredients = recipe.Ingredients;
+        var theIngredients = '';
+        for(var i = 0; i < ingredients.length; i++){
+            theIngredients += `
+                <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label">${ingredients[i]}</label>
+                </div>
+            `
+        }
+        const finalIngredients = `
+            <div class="col-12 col-lg-4">
+                <div class="ingredients">
+                    <h4>Ingredients</h4>
+                    ${theIngredients}
+                </div>
+            </div>
+        `;
+        // Recipe Code
+        var steps = recipe.Recipe;
+        var theSteps = '';
+        for(var i = 0; i < steps.length; i++){
+            theSteps += `
+                <div class="single-preparation-step d-flex">
+                    <h4>${i}</h4>
+                    <p>${steps[i]}</p>
+                </div>
+            `
+        }
+        const finalSteps = `
+            <div class="col-12 col-lg-8">
+                    ${theSteps}
+            </div>
+        `;
+        // Actual Code
         const div = `
-        <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn" onclick = "modal.style.display = "block";">
+        <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn">
             <div class="box">
                 <h4>${recipe.Title}</h4>
                 <p>This is another recipe</p>
@@ -42,87 +77,22 @@ const setupRecipes = (data) => {
                             <div class="row">
                                 <div class="col-12 col-md-8">
                                     <div class="receipe-headline my-5">
-                                        <h2>Vegetarian cheese salad</h2>
+                                        <h2>${recipe.Title}</h2>
                                         <div class="receipe-duration">
                                             <h6>Culture: ${recipe.Culture}</h6>
                                             <h6>Type: ${recipe.Type}</h6>
-                                            <h6>Cook: ${recipe.EstimtedTime}</h6>
-                                            <h6>Yields: ${recipe.ServingSize}</h6>
+                                            <h6>Cook: ${recipe.Estimated_Time}</h6>
+                                            <h6>Yields: ${recipe.Serving_Size}</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-12 col-lg-8">
-                                    <!-- Single Preparation Step -->
-                                    <div class="single-preparation-step d-flex">
-                                        <h4>01.</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                    </div>
-                                    <!-- Single Preparation Step -->
-                                    <div class="single-preparation-step d-flex">
-                                        <h4>02.</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                    </div>
-                                    <!-- Single Preparation Step -->
-                                    <div class="single-preparation-step d-flex">
-                                        <h4>03.</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                    </div>
-                                    <!-- Single Preparation Step -->
-                                    <div class="single-preparation-step d-flex">
-                                        <h4>04.</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                    </div>
-                                </div>
+                                ${finalSteps}
 
                                 <!-- Ingredients -->
-                                <div class="col-12 col-lg-4">
-                                    <div class="ingredients">
-                                        <h4>Ingredients</h4>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">4 Tbsp (57 gr) butter</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">2 large eggs</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">2 yogurt containers granulated sugar</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">1 vanilla or plain yogurt, 170g container</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">2 yogurt containers unbleached white flour</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">1.5 yogurt containers milk</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">1/4 tsp cinnamon</label>
-                                        </div>
-
-                                        <!-- Custom Checkbox -->
-                                        <div class="custom-control custom-checkbox">
-                                            <label class="custom-control-label">1 cup fresh blueberries </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                ${finalIngredients}
                             </div>
                         </div>
                     </div>
@@ -133,26 +103,26 @@ const setupRecipes = (data) => {
         html += div;
     });
     recipeMenu.innerHTML = html;
-}
-//  __       __                  __            __
-// |  \     /  \                |  \          |  \
-// | $$\   /  $$  ______    ____| $$  ______  | $$
-// | $$$\ /  $$$ /      \  /      $$ |      \ | $$
-// | $$$$\  $$$$|  $$$$$$\|  $$$$$$$  \$$$$$$\| $$
-// | $$\$$ $$ $$| $$  | $$| $$  | $$ /      $$| $$
-// | $$ \$$$| $$| $$__/ $$| $$__| $$|  $$$$$$$| $$
-// | $$  \$ | $$ \$$    $$ \$$    $$ \$$    $$| $$
-//  \$$      \$$  \$$$$$$   \$$$$$$$  \$$$$$$$ \$$
-var modal = document.getElementById("myModal");
+    //  __       __                  __            __
+    // |  \     /  \                |  \          |  \
+    // | $$\   /  $$  ______    ____| $$  ______  | $$
+    // | $$$\ /  $$$ /      \  /      $$ |      \ | $$
+    // | $$$$\  $$$$|  $$$$$$\|  $$$$$$$  \$$$$$$\| $$
+    // | $$\$$ $$ $$| $$  | $$| $$  | $$ /      $$| $$
+    // | $$ \$$$| $$| $$__/ $$| $$__| $$|  $$$$$$$| $$
+    // | $$  \$ | $$ \$$    $$ \$$    $$ \$$    $$| $$
+    //  \$$      \$$  \$$$$$$   \$$$$$$$  \$$$$$$$ \$$
+    var modal = document.getElementById("myModal");
 
-// var btn = document.getElementById("myBtn");
-//
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
+    var btn = document.getElementById("myBtn");
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 }
