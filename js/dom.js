@@ -39,7 +39,7 @@ const setupRecipes = (data) => {
         for(var i = 0; i < steps.length; i++){
             theSteps += `
                 <div class="single-preparation-step d-flex">
-                    <h4>${i}</h4>
+                    <h4>${i+1}.</h4>
                     <p>${steps[i]}</p>
                 </div>
             `
@@ -54,7 +54,7 @@ const setupRecipes = (data) => {
         <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn">
             <div class="box">
                 <h4>${recipe.Title}</h4>
-                <p>This is another recipe</p>
+                <p>${recipe.Type}, ${recipe.Culture} Cuisine</p>
             </div>
             <!--This is the Modal part-->
             <div id="myModal" class="modal">
@@ -64,7 +64,7 @@ const setupRecipes = (data) => {
                         <div class="row">
                             <div class="col-12">
                                 <div class="receipe-slider owl-carousel">
-                                    <img src="css/img/Spices.jpg" style = "width: 1080px;" alt="">
+                                    <img src="css/img/Spices.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ const setupRecipes = (data) => {
                     <!-- Receipe Content Area -->
                     <div class="receipe-content-area">
                         <div class="container">
-
+                            <hr class = "introRecipe">
                             <div class="row">
                                 <div class="col-12 col-md-8">
                                     <div class="receipe-headline my-5">
