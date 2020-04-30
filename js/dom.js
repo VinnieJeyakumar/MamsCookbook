@@ -46,6 +46,7 @@ const setupRecipes = (data) => {
         }
         const finalSteps = `
             <div class="col-12 col-lg-8">
+                    <h4>Recipe</h4>
                     ${theSteps}
             </div>
         `;
@@ -63,9 +64,6 @@ const setupRecipes = (data) => {
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="receipe-slider owl-carousel">
-                                    <img src="css/img/Spices.jpg" alt="">
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,6 +83,9 @@ const setupRecipes = (data) => {
                                             <h6>Yields: ${recipe.Serving_Size}</h6>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <img src="css/img/Spices.jpg" alt="" style="width: 100%; padding-top: 15%;">
                                 </div>
                             </div>
 
