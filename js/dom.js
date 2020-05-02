@@ -13,6 +13,7 @@ db.collection('recipes').onSnapshot(snapshot => {
 const recipeMenu = document.querySelector('#recipeMenu');
 const setupRecipes = (data) => {
     let html = '';
+    var index = 0;
     data.forEach(doc => {
         const recipe = doc.data();
         // Ingredient Code
@@ -52,13 +53,13 @@ const setupRecipes = (data) => {
         `;
         // Actual Code
         const div = `
-        <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn">
+        <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn${index}" onclick = "modalStuff(${index})">
             <div class="box">
                 <h4>${recipe.Title}</h4>
                 <p>${recipe.Type}, ${recipe.Culture} Cuisine</p>
             </div>
             <!--This is the Modal part-->
-            <div id="myModal" class="modal">
+            <div id="myModal${index}" class="modal">
                 <div class="modal-content">
                     <!-- Receipe Slider -->
                     <div class="container">
@@ -95,6 +96,7 @@ const setupRecipes = (data) => {
                                 <!-- Ingredients -->
                                 ${finalIngredients}
                             </div>
+                            <hr class = "introRecipe">
                         </div>
                     </div>
                 </div>
@@ -102,24 +104,23 @@ const setupRecipes = (data) => {
         </div>
         `;
         html += div;
+        index++;
     });
     recipeMenu.innerHTML = html;
-    //  __       __                  __            __
-    // |  \     /  \                |  \          |  \
-    // | $$\   /  $$  ______    ____| $$  ______  | $$
-    // | $$$\ /  $$$ /      \  /      $$ |      \ | $$
-    // | $$$$\  $$$$|  $$$$$$\|  $$$$$$$  \$$$$$$\| $$
-    // | $$\$$ $$ $$| $$  | $$| $$  | $$ /      $$| $$
-    // | $$ \$$$| $$| $$__/ $$| $$__| $$|  $$$$$$$| $$
-    // | $$  \$ | $$ \$$    $$ \$$    $$ \$$    $$| $$
-    //  \$$      \$$  \$$$$$$   \$$$$$$$  \$$$$$$$ \$$
-    var modal = document.getElementById("myModal");
+}
+//  __       __                  __            __
+// |  \     /  \                |  \          |  \
+// | $$\   /  $$  ______    ____| $$  ______  | $$
+// | $$$\ /  $$$ /      \  /      $$ |      \ | $$
+// | $$$$\  $$$$|  $$$$$$\|  $$$$$$$  \$$$$$$\| $$
+// | $$\$$ $$ $$| $$  | $$| $$  | $$ /      $$| $$
+// | $$ \$$$| $$| $$__/ $$| $$__| $$|  $$$$$$$| $$
+// | $$  \$ | $$ \$$    $$ \$$    $$ \$$    $$| $$
+//  \$$      \$$  \$$$$$$   \$$$$$$$  \$$$$$$$ \$$
+function modalStuff(num) {
+    var modal = document.getElementById("myModal" + (num));
 
-    var btn = document.getElementById("myBtn");
-
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
+    modal.style.display = "block";
 
     window.onclick = function(event) {
         if (event.target == modal) {
