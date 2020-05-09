@@ -51,6 +51,12 @@ const setupRecipes = (data) => {
                     ${theSteps}
             </div>
         `;
+        // Image Code
+        var imageLink = recipe.Image;
+        var imageCode = `<img src="css/img/Spices.jpg" alt="" style="width: 100%; padding-top: 15%;">`;
+        if (imageLink.length > 1){
+            imageCode = `<img src="${imageLink}" alt="Image Not available" style="width: 100%; padding-top: 15%;">`;
+        }
         // Actual Code
         const div = `
         <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn${index}" onclick = "modalStuff(${index})">
@@ -86,7 +92,7 @@ const setupRecipes = (data) => {
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">
-                                    <img src="css/img/Spices.jpg" alt="" style="width: 100%; padding-top: 15%;">
+                                    ${imageCode}
                                 </div>
                             </div>
 
