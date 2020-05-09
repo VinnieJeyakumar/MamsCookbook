@@ -57,12 +57,17 @@ const setupRecipes = (data) => {
         if (imageLink.length > 1){
             imageCode = `<img src="${imageLink}" alt="Image Not available" style="width: 100%; padding-top: 15%;">`;
         }
+        // Cuisine Code
+        var cuisineCode = `<p>${recipe.Type}, ${recipe.Culture}</p>`;
+        if (recipe.Culture!="General"){
+            cuisineCode = `<p>${recipe.Type}, ${recipe.Culture} Cuisine</p>`;
+        }
         // Actual Code
         const div = `
         <div class="col-lg-4 mt-4 mt-lg-0" id = "myBtn${index}" onclick = "modalStuff(${index})">
             <div class="box">
                 <h4>${recipe.Title}</h4>
-                <p>${recipe.Type}, ${recipe.Culture} Cuisine</p>
+                ${cuisineCode}
             </div>
             <!--This is the Modal part-->
             <div id="myModal${index}" class="modal">
