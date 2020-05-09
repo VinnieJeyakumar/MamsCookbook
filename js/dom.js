@@ -55,7 +55,8 @@ const setupRecipes = (data) => {
         var imageLink = recipe.Image;
         var imageCode = `<img src="css/img/Spices.jpg" alt="" style="width: 100%; padding-top: 15%;">`;
         if (imageLink.length > 1){
-            imageCode = `<img src="${imageLink}" alt="Image Not available" style="width: 100%; padding-top: 15%;">`;
+            imageLink = imageLink.substring(33);
+            imageCode = `<img src="https://drive.google.com/uc?export=view&id=${imageLink}" alt="Image Not available" style="width: 100%; padding-top: 15%;">`;
         }
         // Cuisine Code
         var cuisineCode = `<p>${recipe.Type}, ${recipe.Culture}</p>`;
