@@ -314,21 +314,10 @@ button span:before, button span:after {
 .sel {
   font-size: 1rem;
   display: inline-block;
-  margin: 3em 2em;
-  width: 350px;
+  margin: 1em 2em;
   background-color: transparent;
   position: relative;
   cursor: pointer;
-}
-
-.sel::before {
-  position: absolute;
-  content: '\f063';
-  font-family: 'FontAwesome';
-  font-size: 2em;
-  color: #FFF;
-  right: 20px;
-  top: calc(50% - 0.5em);
 }
 
 .sel.active::before {
@@ -407,15 +396,6 @@ button span:before, button span:after {
 
 .sel__box__options:hover {
   background-color: #ebedef;
-}
-
-/* ----- Select Box Black Panther ----- */
-.sel {
-  border-bottom: 4px solid rgba(0, 0, 0, 0.3);
-}
-
-.sel--black-panther {
-  z-index: 3;
 }
 
 /* ===== Keyframes ===== */
