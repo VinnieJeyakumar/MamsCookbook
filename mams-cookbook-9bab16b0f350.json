@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mams-cookbook",
+  "private_key_id": "9bab16b0f350216eec3c12c738fc224352d7bf73",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCsi+gVCUzwDzCy\nvMzYHUOKGp3q3jX3OwXkPmighLE0Kt9qCmPl/wgex/9/bkiijYB4cMV6s64RblrW\nwPItoWIfQiWfiA9qgRikgc7vIA8IJL1PcsAY0ExxzV5f7phl7EgRFKfDihjLVnil\nvqwP9Z6GYb/JCKq5jCe22QpXhGCOb03SbM16JSZPhTzNiokVqRC2TLYHWvP/sb6e\n9Pwkc2g306tJERliazalAEC5Js1uziojc3bfnJ6brfCf+0xOdKhdtYzUHL0n4MPt\ncvoFgEzdNxMHpmX8jOEzfD4TMEYUlC1qXNyAHA0YfcIC/XVBnnBGQtpOpIK6zD4e\nhNmXS11BAgMBAAECggEAI8NFwaJxW2pSliFStdJu7r9wjr8q4UjPAk07I1YNYnom\nX1Sy+vc+qB6c4r0peeOpRo1dKP736637Tvqj13hVHZR4ttWdGF6UjHhJOz/iTbZL\ntJ1cmmgGCCpgTrLlzG5KS5wD36AOXorYK8ZW5GHszv6QoSrWM+oMSzY2EgiieLLa\nw4joyYrLe5ueLvu325xNO3SBgftMpXacU0kHkoaKHiD7tRpDX3RyYVJ1m9xARFCQ\nqr8ksPDnz/RWoMqLlhOZuzfht03j6QiyaNcDbnl/bmuN99vF62tiZ1VF3hqxFl7r\nKXln3fTgwn3lTO4iD1NwAscwU6pMyfwKVJlmit8aaQKBgQDjNae45+GTYtZVyltK\ngNP98zdqVlB60a92myuJNV7ZUJOIjODacUOO+KCCvyMrYKcJUAASvWeZbVtGSY3M\n96AwpF2t+8oQf4qQfcxRjm3gm9xCXdPa4emWGAtp3df+pvgL+ptDRA4jp4xtVX4F\nuFF6rkeZSla86oC332XNGEK7bQKBgQDCaQ++Y0AFWi3KKB2sVipApe7IpLWnGnqt\nEjUG4IdeJP+z9FKwKFmXc3EquUUhmz/iIKiYfypF5IbqWzr0JZcZFxoX3uX5TEBP\n2KyK3fmAEuYN6nEyTj40ZKfY4nUQMpegLjnerT29bYm6BKA87z2mVMMUj5hZSAUb\nu8ksLADQpQKBgQDQK1+xBRri26J+1bkQqLoSKR1zmwN/k9BMPd0EiFaPisixSknV\nOgLo4hjF0fOaEaLY4GhAwzJBGzWOT2PREGu/RUjjWBcJSKGewvNJIdLAAG0sjSTG\nnUdTklIau/viv/3xk7lfRuIhfqgloDena/mTCkxlQPv5eG1YiiCOaZTyfQKBgQCt\nerTqzoQFgqgTmeKIs0b281r1vky+tZk8sV+SKG+DKf7nJSFYQllYFVKprjOrPm8u\nKLhphChDwB5IKGqeDKEdaYkGPgf3gvxsg8vMCzImADc7ubWTD1DgzeUdW07cyliV\nPkqzkuHiFEnvLUuTtGTN9RszUMPA/8xXKCXm/ckoZQKBgBx3qteneVZo7oNf/gtl\nZXC31v2LNS5n5z33pt+Ub/dk8VvQNlIvnCKD+Y0RBlCLwotDV/1T1Ho6emhVBA10\nZpT41xgV4xtL98m9B7vKdeM0wvku5ZbhqA308Y8Ipu7iZ2JCnUPYZxHk55fSf3Xn\nLnUk5plB23aKxy/ufRv2q0WS\n-----END PRIVATE KEY-----\n",
+  "client_email": "mams-cookbook@appspot.gserviceaccount.com",
+  "client_id": "109356732975402848712",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mams-cookbook%40appspot.gserviceaccount.com"
+}
