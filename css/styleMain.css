@@ -189,7 +189,7 @@ input, button {
     top: 50%;
     left: 0;
     right: 0;
-    width: 1000px;
+    width: fit-content;
     padding: 20px;
     margin: -83px auto 0 auto;
     background-color: #FFB86F;
