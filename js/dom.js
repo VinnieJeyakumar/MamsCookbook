@@ -157,9 +157,15 @@ searchRequest.addEventListener('submit', (e) =>{
     var selectedOption = options.options[options.selectedIndex].value;
     // Text that is Typed inspect
     var inputVal = document.getElementById("lookup").value;
+    inputVal.toLowerCase();
+    inputVal = inputVal.charAt(0).toUpperCase() + inputVal.slice(1);
     // Sort
     recipeMenu.innerHTML = '';
-    db.collection('recipes').where(selectedOption, "==", inputVal).orderBy('Title').get().then(function(querySnapshot){
+    var orderBy = 'Title';
+    if (selectedOption == "Title"){
+        orderBy = 'Culture';
+    }
+    db.collection('recipes').where(selectedOption, "==", inputVal).orderBy(orderBy).get().then(function(querySnapshot){
         let html = '';
         var index = 0;
         querySnapshot.forEach(function(doc) {
