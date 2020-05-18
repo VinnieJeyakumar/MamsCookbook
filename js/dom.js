@@ -157,7 +157,7 @@ searchRequest.addEventListener('submit', (e) =>{
     var selectedOption = options.options[options.selectedIndex].value;
     // Text that is Typed inspect
     var inputVal = document.getElementById("lookup").value;
-    inputVal.toLowerCase();
+    inputVal = inputVal.toLowerCase();
     inputVal = inputVal.charAt(0).toUpperCase() + inputVal.slice(1);
     // Sort
     recipeMenu.innerHTML = '';
