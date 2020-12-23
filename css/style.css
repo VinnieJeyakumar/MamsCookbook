@@ -627,6 +627,27 @@ pre code {
     padding-left: 15px;
 }
 
+.culturalSig i{
+    font-size: 15px;
+}
+
+.culturalSig {
+    text-align: justify;
+    margin-right: 12em;
+}
+
+.Note i{
+    font-size: 16px;
+}
+
+.Note {
+    text-align: center;
+}
+
+.borderTop {
+    margin-top: 15px;
+}
+
 .col {
     flex-basis: 0;
     flex-grow: 1;
@@ -9988,6 +10009,11 @@ hr.light {
     border: none;
     border-radius: 10rem;
 }
+
+#arrowDown {
+    font-size: 1.85rem;
+}
+
 
 .page-section {
     padding: 8rem 0;

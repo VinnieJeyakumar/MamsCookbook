@@ -29,7 +29,7 @@ const setupRecipes = (data) => {
         const finalIngredients = `
             <div class="col-12 col-lg-4">
                 <div class="ingredients">
-                    <h4>Ingredients</h4>
+                    <h4 class="borderTop">Ingredients</h4>
                     ${theIngredients}
                 </div>
             </div>
@@ -47,7 +47,7 @@ const setupRecipes = (data) => {
         }
         const finalSteps = `
             <div class="col-12 col-lg-8">
-                    <h4>Recipe</h4>
+                    <h4 class="borderTop">Recipe</h4>
                     ${theSteps}
             </div>
         `;
@@ -58,10 +58,74 @@ const setupRecipes = (data) => {
             imageLink = imageLink.substring(33);
             imageCode = `<img src="https://drive.google.com/uc?export=view&id=${imageLink}" alt="Image Not available" style="width: 100%; padding-top: 15%;">`;
         }
+        // Name Code
+        var nameCode = ``;
+        if(recipe.Name != ""){
+            nameCode = `<h6>Chef: ${recipe.Name}</h6>`;
+        }
+        else {
+            nameCode = `<h6>Chef: Student from the class of ${recipe.YOG}</h6>`;
+        }
         // Cuisine Code
         var cuisineCode = `<p>${recipe.Type}, ${recipe.Culture}</p>`;
         if (recipe.Culture!="General"){
             cuisineCode = `<p>${recipe.Type}, ${recipe.Culture} Cuisine</p>`;
+        }
+        // Spicy/Veg Code
+        var spicyVegCode = ``;
+        if(recipe.Spicy != "" && recipe.Veg == ""){
+            spicyVegCode = `<h6>Specification: Careful! This recipe is spicy!</h6>`;
+        }
+        else if(recipe.Spicy != "" && recipe.Veg != ""){
+            spicyVegCode = `<h6>Specification: This recipe is Vegetarian and spicy!</h6>`;
+        }
+        else if(recipe.Spicy == "" && recipe.Veg != ""){
+            spicyVegCode = `<h6>Specification: This recipe is Vegetarian!</h6>`;
+        }
+        // Allergy Code
+        var allergyCode = ``;
+        var allergyList;
+        if(recipe.Allergy != ""){
+            allergyList = recipe.Allergy.split(", ");
+            for(var i = 0; i < allergyList.length; i++){
+                if(allergyList[i] == "Wheat"){
+                    allergyCode += `<div class = "AllergyPic">
+                                        <img src = "css/img/wheat.PNG" alt="Wheat">
+                                        <div class="AllergyOverlay">
+                                            <div class="AllergyText">Wheat</div>
+                                        </div>
+                                    </div>`;
+                }
+                if(allergyList[i] == "Seafood"){
+                    allergyCode += `<div class = "AllergyPic">
+                                        <img src = "css/img/seafood.PNG" alt="Seafood">
+                                        <div class="AllergyOverlay">
+                                            <div class="AllergyText">Seafood</div>
+                                        </div>
+                                    </div>`;
+                }
+                if(allergyList[i] == "Dairy"){
+                    allergyCode += `<div class = "AllergyPic">
+                                        <img src = "css/img/dairy.PNG" alt="Dairy">
+                                        <div class="AllergyOverlay">
+                                            <div class="AllergyText">Dairy</div>
+                                        </div>
+                                    </div>`;
+                }
+                if(allergyList[i] == "Nuts"){
+                    allergyCode += `<div class = "AllergyPic">
+                                        <img src = "css/img/nuts.PNG" alt="Nuts">
+                                        <div class="AllergyOverlay">
+                                            <div class="AllergyText">Nuts</div>
+                                        </div>
+                                    </div>`;
+                }
+            }
+        }
+        //Note code
+        var noteCode = ``;
+        if(recipe.Note != ""){
+            noteCode = `<div class="Note"> <i>Note: ${recipe.Note}</i> </div>`;
         }
         // Actual Code
         const div = `
@@ -90,10 +154,21 @@ const setupRecipes = (data) => {
                                     <div class="receipe-headline my-5">
                                         <h2>${recipe.Title}</h2>
                                         <div class="receipe-duration">
+                                            ${nameCode}
                                             <h6>Culture: ${recipe.Culture}</h6>
                                             <h6>Type: ${recipe.Type}</h6>
-                                            <h6>Cook: ${recipe.Estimated_Time}</h6>
-                                            <h6>Yields: ${recipe.Serving_Size}</h6>
+                                            <h6>Time: ${recipe.Estimated_Time}</h6>
+                                            <h6>Serves: ${recipe.Serving_Size}</h6>
+                                        </div>
+                                        <div>
+                                            <div class="culturalSig">
+                                                <i>${recipe.CulSig}</i>
+                                            </div>
+                                            <div class = "Allergy">
+                                                ${spicyVegCode}
+                                                <h6>Allergy Warning:</h6>
+                                                ${allergyCode}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,6 +183,7 @@ const setupRecipes = (data) => {
                                 <!-- Ingredients -->
                                 ${finalIngredients}
                             </div>
+                            ${noteCode}
                             <hr class = "introRecipe">
                         </div>
                     </div>
